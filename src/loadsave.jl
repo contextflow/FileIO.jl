@@ -1,7 +1,7 @@
 const sym2loader = Dict{Symbol,Vector{Symbol}}()
 const sym2saver  = Dict{Symbol,Vector{Symbol}}()
 
-is_installed(pkg::Symbol) = get(Pkg.installed(), string(pkg), nothing) != nothing
+is_installed(pkg::Symbol) = true
 
 function checked_import(pkg::Symbol)
     isdefined(Main, pkg) && return getfield(Main, pkg)
